@@ -19,6 +19,11 @@ namespace EchoClient.Echo {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.without-brains.net/echo_service#Echo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         EchoClient.Echo.EchoResponse Echo(EchoClient.Echo.EchoRequest request);
+        
+        // CODEGEN: Generating message contract since the operation ReverseEcho is neither RPC nor document wrapped.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.without-brains.net/echo_service#ReverseEcho", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        EchoClient.Echo.ReverseEchoResponse ReverseEcho(EchoClient.Echo.ReverseEchoRequest request);
     }
     
     /// <remarks/>
@@ -87,6 +92,40 @@ namespace EchoClient.Echo {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ReverseEchoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReverseEchoRequest", Namespace="http://www.without-brains.net/echo", Order=0)]
+        public EchoClient.Echo.EchoMessageType ReverseEchoRequest1;
+        
+        public ReverseEchoRequest() {
+        }
+        
+        public ReverseEchoRequest(EchoClient.Echo.EchoMessageType ReverseEchoRequest1) {
+            this.ReverseEchoRequest1 = ReverseEchoRequest1;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ReverseEchoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReverseEchoResponse", Namespace="http://www.without-brains.net/echo", Order=0)]
+        public EchoClient.Echo.EchoMessageType ReverseEchoResponse1;
+        
+        public ReverseEchoResponse() {
+        }
+        
+        public ReverseEchoResponse(EchoClient.Echo.EchoMessageType ReverseEchoResponse1) {
+            this.ReverseEchoResponse1 = ReverseEchoResponse1;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EchoPortTypeChannel : EchoClient.Echo.EchoPortType, System.ServiceModel.IClientChannel {
     }
@@ -124,6 +163,18 @@ namespace EchoClient.Echo {
             inValue.EchoRequest1 = EchoRequest1;
             EchoClient.Echo.EchoResponse retVal = ((EchoClient.Echo.EchoPortType)(this)).Echo(inValue);
             return retVal.EchoResponse1;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EchoClient.Echo.ReverseEchoResponse EchoClient.Echo.EchoPortType.ReverseEcho(EchoClient.Echo.ReverseEchoRequest request) {
+            return base.Channel.ReverseEcho(request);
+        }
+        
+        public EchoClient.Echo.EchoMessageType ReverseEcho(EchoClient.Echo.EchoMessageType ReverseEchoRequest1) {
+            EchoClient.Echo.ReverseEchoRequest inValue = new EchoClient.Echo.ReverseEchoRequest();
+            inValue.ReverseEchoRequest1 = ReverseEchoRequest1;
+            EchoClient.Echo.ReverseEchoResponse retVal = ((EchoClient.Echo.EchoPortType)(this)).ReverseEcho(inValue);
+            return retVal.ReverseEchoResponse1;
         }
     }
 }

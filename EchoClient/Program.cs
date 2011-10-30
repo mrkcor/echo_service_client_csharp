@@ -20,11 +20,23 @@ namespace EchoClient
             Echo.EchoMessageType request = new Echo.EchoMessageType();
             request.Message = message;
 
+            Echo.EchoMessageType response;
+
             try
             {
-                Echo.EchoMessageType response = client.Echo(request);
-                Console.WriteLine("EchoService said: " + response.Message);
+                response = client.Echo(request);
+                Console.WriteLine("EchoService responsed to Echo: " + response.Message);
             } catch (System.ServiceModel.FaultException sf) {
+                Console.WriteLine("SOAP fault: " + sf.Message);
+            }
+
+            try
+            {
+                response = client.ReverseEcho(request);
+                Console.WriteLine("EchoService responsed to ReverseEcho: " + response.Message);
+            }
+            catch (System.ServiceModel.FaultException sf)
+            {
                 Console.WriteLine("SOAP fault: " + sf.Message);
             }
         }

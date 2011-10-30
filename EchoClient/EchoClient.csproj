@@ -76,8 +76,6 @@
     <None Include="Service References\Echo\EchoClient.Echo.EchoMessageType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Echo\echo_service.wsdl" />
-    <None Include="Service References\Echo\echo_service.xsd" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\Echo\" />
@@ -89,6 +87,8 @@
     <None Include="Service References\Echo\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\Echo\echo_service.wsdl" />
+    <None Include="Service References\Echo\echo_service.xsd" />
     <None Include="Service References\Echo\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

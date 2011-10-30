@@ -21,8 +21,8 @@
     <MetadataSource Address="http://localhost:9292/echo_service.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="echo_service.wsdl" MetadataType="Wsdl" ID="9eb8dbeb-fdac-4f50-b3eb-4bb81a92463c" SourceId="1" SourceUrl="http://localhost:9292/echo_service.wsdl" />
-    <MetadataFile FileName="echo_service.xsd" MetadataType="Schema" ID="92246ad7-9a56-44ca-b0be-d1cae92665be" SourceId="1" SourceUrl="http://localhost:9292/echo_service.xsd" />
+    <MetadataFile FileName="echo_service.wsdl" MetadataType="Wsdl" ID="0dfceee6-8fe9-4590-b84c-55a7afa3817e" SourceId="1" SourceUrl="http://localhost:9292/echo_service.wsdl" />
+    <MetadataFile FileName="echo_service.xsd" MetadataType="Schema" ID="fe5e30c0-b93d-4d26-862b-e39e1a8a40d6" SourceId="1" SourceUrl="http://localhost:9292/echo_service.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
