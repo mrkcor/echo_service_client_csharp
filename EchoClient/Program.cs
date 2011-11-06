@@ -26,8 +26,8 @@ namespace EchoClient
             {
                 response = client.Echo(request);
                 Console.WriteLine("EchoService responsed to Echo: " + response.Message);
-            } catch (System.ServiceModel.FaultException sf) {
-                Console.WriteLine("SOAP fault: " + sf.Message);
+            } catch (System.ServiceModel.CommunicationException exception) {
+                Console.WriteLine("An error occurred while calling Echo on the EchoService: " + exception.Message);
             }
 
             try
@@ -35,9 +35,9 @@ namespace EchoClient
                 response = client.ReverseEcho(request);
                 Console.WriteLine("EchoService responsed to ReverseEcho: " + response.Message);
             }
-            catch (System.ServiceModel.FaultException sf)
+            catch (System.ServiceModel.CommunicationException exception)
             {
-                Console.WriteLine("SOAP fault: " + sf.Message);
+                Console.WriteLine("An error occurred while calling ReverseEcho on the EchoService: " + exception.Message);
             }
         }
     }
