@@ -48,6 +48,11 @@ namespace EchoClient
                 Console.WriteLine("EchoService responsed to Echo: " + response.Message);
             } catch (System.ServiceModel.CommunicationException exception) {
                 // In case of an error (SOAP fault or otherwise) output the error
+                //
+                // System.ServiceModel.CommunicationException is a generic 
+                // exception that catches a lot of web service related faults, 
+                // if you want you can catch more specific exceptions in your 
+                // code to handle specific faults
                 Console.WriteLine("An error occurred while calling Echo on the EchoService: " + exception.Message);
             }
 
@@ -60,6 +65,11 @@ namespace EchoClient
             catch (System.ServiceModel.CommunicationException exception)
             {
                 // In case of an error (SOAP fault or otherwise) output the error
+                //
+                // System.ServiceModel.CommunicationException is a generic 
+                // exception that catches a lot of web service related faults, 
+                // if you want you can catch more specific exceptions in your 
+                // code to handle specific faults
                 Console.WriteLine("An error occurred while calling ReverseEcho on the EchoService: " + exception.Message);
             }
         }
